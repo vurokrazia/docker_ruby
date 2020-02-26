@@ -1,0 +1,11 @@
+version: '3'
+services:
+  ruby:
+    image: drecom/ubuntu-ruby
+    container_name: ruby_container
+    ports:
+      - "80:80"
+    volumes:
+      - "./src:/home/"
+    command: bash -c "bash" #"rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    tty: true
